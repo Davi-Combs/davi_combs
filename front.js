@@ -17,11 +17,11 @@ form.addEventListener("submit", async (e) => {
   appendMessage("YOU", message);
   input.value = "";
 
-  const res = await fetch("https://davicombs-production.up.railway.app/api/server", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ message })
-  });
+  const res = await fetch("/chat", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ message })
+});
 
   const data = await res.json();
   appendMessage("ALPACA", data.reply);
