@@ -2,6 +2,7 @@
 import express from "express";
 import fetch from "node-fetch";
 import cors from "cors";
+import OpenAI from "openai";
 
 const app = express();
 app.use(cors());
@@ -15,7 +16,7 @@ app.post("/chat", async (req, res) => {
     const { message } = req.body;
 
     // Example with OpenAI API — change model if you want
-    const response = await fetch("https://api.openai.com/v1/chat/completions", {
+    /*const response = await fetch("https://api.openai.com/v1/chat/completions", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -25,8 +26,12 @@ app.post("/chat", async (req, res) => {
         model: "gpt-4.1",
         messages: [{ role: "user", content: message }],
       }),
-    });
+    });*/
 
+ const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY, }); 
+ const response = await openai.responses.create({ prompt: { "id": "pmpt_68ddf7ee5ff48196b76b973347e938c90ff3f32be50cf86d", "version": "1" } });
+
+    
     const data = await response.json();
     const reply = data.choices?.[0]?.message?.content || "ALPACA is speechless...";
 
