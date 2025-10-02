@@ -13,14 +13,12 @@ const OPENAI_KEY = process.env.OPENAI_API_KEY;
 app.post("/chat", async (req, res) => {
   try {
     const { message } = req.body;
-    const response = await fetch("https://api.openai.com/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Authorization": `Bearer ${OPENAI_KEY}`,
-      },
-      body: JSON.stringify({
-        model: "gpt-4o",
+    const res = await fetch("https://davicombs-production.up.railway.app/chat", {
+       method: "POST",
+       headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message })
+    });
+        model: "gpt-4.1",
         messages: [{ role: "user", content: message }],
       }),
     });
