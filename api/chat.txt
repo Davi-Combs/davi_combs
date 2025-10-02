@@ -1,8 +1,8 @@
 // api/chat.js
-export default async function handler(req, res) {
+//export default async function handler(req, res) {
   // --- CORS so GitHub pages can call this ---
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
+//  res.setHeader("Access-Control-Allow-Origin", "*");
+//  res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
   if (req.method === "OPTIONS") {
     res.status(200).end();
@@ -13,7 +13,7 @@ export default async function handler(req, res) {
     return;
   }
 
-  const { message } = req.body || {};
+//  const { message } = req.body || {};
   if (!message) {
     res.status(400).json({ error: "Missing message" });
     return;
@@ -25,7 +25,7 @@ export default async function handler(req, res) {
       {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+   //       "Content-Type": "application/json",
           Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
         },
         body: JSON.stringify({
