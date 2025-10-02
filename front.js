@@ -17,7 +17,7 @@ form.addEventListener("submit", async (e) => {
   appendMessage("YOU", message);
   input.value = "";
 
-  const res = await fetch("https://YOUR-RAILWAY-APP.up.railway.app/chat", {
+  const res = await fetch("https://davicombs-production.up.railway.app/?/chat", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ message })
