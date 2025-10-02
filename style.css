@@ -1,28 +1,48 @@
 body {
-    margin: 0;
-    padding: 0;
-    background-color: #2f2f2f; /* dark background */
-    font-family: Arial, sans-serif;
-    color: #fff;
-  }
+  margin: 0;
+  padding: 0;
+  font-family: "Courier New", monospace;
+  background-color: #000000; /* dark grey background like fatigues */
+  color: #2e2e2e;
+}
 
-  .page-container {
-    position: relative;
-    width: 100%;
-    height: 100vh; /* full screen */
-    overflow: hidden;
-  }
+.page-container {
+  display: flex;
+  flex-direction: column;
+  width: 1000px;
+  align-items: center;
+  background-color: #2e2e2e; /* dark grey background like fatigues */
+  color: #000000;
+  padding: 20px;
+}
 
-  .container {
-    position: absolute;
-    border: 2px solid #000000;
-    background-color: #4f7942; /* army green */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    padding: 10px;
-  }
+.grid-container {
+  display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Adjust the number of columns */
+    gap: 10px; /* Adjust the gap between items */
+  background-color: #3a4a3f; /* deep army green */
+  border: 4px solid #1a1a1a;
+  border-radius: 12px;
+  padding: 20px;
+  width: 90%;
+  max-width: 800px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.6);
+
+  /* allow resizing */
+  resize: both;
+  overflow: auto;
+}
+
+.container {
+  background-color: #556b2f; /* olive drab */
+  padding: 15px;
+  border-radius: 8px;
+  margin: 10px 0;
+
+  /* allow resizing */
+  resize: both;
+  overflow: auto;
+}
 
   /* Example chaotic placement */
   .item1 { width: 150px; height: 200px; top: 20px; left: 30px; background: #8a9a5b; }
@@ -32,41 +52,94 @@ body {
   .item5 { width: 200px; height: 120px; top: 100px; right: 200px; background: #6b8e23; }
   .item6 { width: 100px; height: 100px; bottom: 100px; right: 50px; background: #9acd32; }
 
+
+h1, h2 {
+  color: #d4af37; /* gold for contrast */
+  text-align: center;
+  letter-spacing: 2px;
+}
+
   .main-container {
     text-align: center;
     width: 100%;
   }
 
-  .chatbox {
-    background: #2f2f2f;
-    border: 1px solid #fff;
-    padding: 10px;
-    margin-top: 10px;
-    height: 200px;
-    overflow-y: auto;
-  }
+.chatbox {
+  background-color: #2e2e2e;
+  border: 2px solid #d4af37;
+  border-radius: 6px;
+  padding: 10px;
+  min-height: 200px;
+  height: 300px;
+  display: flex;
+  flex-direction: column; /* stack messages + form vertically */
+  font-size: 14px;
+  color: #f4f4f4;
 
-  #messages div {
-    margin: 5px 0;
-  }
+  /* resizable */
+  resize: both;
+  overflow: hidden; /* stop double scrollbars */
+}
 
-  #chatForm {
-    margin-top: 10px;
-  }
+#messages {
+  flex: 1;                /* take up remaining space */
+  overflow-y: auto;        /* scroll only this section */
+  padding-right: 5px;      /* breathing room */
+}
 
-  #userInput {
-    width: 70%;
-    padding: 5px;
-  }
+#messages div {
+  margin-bottom: 10px;
+}
 
-  button {
-    padding: 5px 10px;
-    background: #556b2f;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
+#chatForm {
+  display: flex;
+  margin-top: 10px;
+  flex-shrink: 0; /* keep form pinned at bottom */
+}
 
-  button:hover {
-    background: #8a9a5b;
-  }
+#messages div {
+  margin-bottom: 10px;
+}
+
+.user-msg {
+  color: #9acd32; /* yellow-green for user text */
+}
+
+.alpaca-msg {
+  color: #d4af37; /* gold for ALPACA replies */
+  font-style: italic;
+}
+
+#chatForm {
+  display: flex;
+  margin-top: 10px;
+}
+
+#userInput {
+  flex: 1;
+  padding: 10px;
+  border: 2px solid #1a1a1a;
+  border-radius: 6px;
+  background-color: #3a4a3f;
+  color: #f4f4f4;
+}
+
+#userInput::placeholder {
+  color: #bbb;
+}
+
+button {
+  padding: 10px 20px;
+  margin-left: 10px;
+  background-color: #d4af37;
+  border: none;
+  border-radius: 6px;
+  color: #1a1a1a;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #b8860b;
+}
