@@ -36,8 +36,9 @@ app.post("/chat", async (req, res) => {
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
+
 import path from "path";
 import { fileURLToPath } from "url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-app.use(express.static(path.join(__dirname, "../")));
+app.use(express.static(path.join(__dirname, "../public")));
