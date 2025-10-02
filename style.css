@@ -1,0 +1,72 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #2f2f2f; /* dark background */
+    font-family: Arial, sans-serif;
+    color: #fff;
+  }
+
+  .page-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* full screen */
+    overflow: hidden;
+  }
+
+  .container {
+    position: absolute;
+    border: 2px solid #000;
+    background-color: #4f7942; /* army green */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    padding: 10px;
+  }
+
+  /* Example chaotic placement */
+  .item1 { width: 150px; height: 200px; top: 20px; left: 30px; background: #8a9a5b; }
+  .item2 { width: 75px; height: 100px; top: 200px; right: 40px; background: #556b2f; }
+  .item3 { width: 350px; height: 400px; top: 50%; left: 50%; background: #3b5323; transform: translate(-50%, -50%); color: #fff; }
+  .item4 { width: 120px; height: 150px; bottom: 50px; left: 80px; background: #708238; }
+  .item5 { width: 200px; height: 120px; top: 100px; right: 200px; background: #6b8e23; }
+  .item6 { width: 100px; height: 100px; bottom: 100px; right: 50px; background: #9acd32; }
+
+  .main-container {
+    text-align: center;
+    width: 100%;
+  }
+
+  .chatbox {
+    background: #2f2f2f;
+    border: 1px solid #fff;
+    padding: 10px;
+    margin-top: 10px;
+    height: 200px;
+    overflow-y: auto;
+  }
+
+  #messages div {
+    margin: 5px 0;
+  }
+
+  #chatForm {
+    margin-top: 10px;
+  }
+
+  #userInput {
+    width: 70%;
+    padding: 5px;
+  }
+
+  button {
+    padding: 5px 10px;
+    background: #556b2f;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background: #8a9a5b;
+  }
