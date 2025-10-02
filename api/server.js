@@ -16,17 +16,17 @@ app.post("/chat", async (req, res) => {
     const { message } = req.body;
 
     // Example with OpenAI API — change model if you want
-    /*const response = await fetch("https://api.openai.com/v1/chat/completions", {
+    const response = await fetch("https://api.openai.com/v1/chat/completions", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         "Authorization": `Bearer ${OPENAI_KEY}`,
       },
       body: JSON.stringify({
-        model: "gpt-4.1",
+        model: "gpt-4o",
         messages: [{ role: "user", content: message }],
       }),
-    });*/
+    });
 
  const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY, }); 
  const response = await openai.responses.create({ prompt: { "id": "pmpt_68ddf7ee5ff48196b76b973347e938c90ff3f32be50cf86d", "version": "1" } });
