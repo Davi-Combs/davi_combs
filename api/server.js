@@ -22,7 +22,7 @@ app.post("/chat", async (req, res) => {
         "Authorization": `Bearer ${OPENAI_KEY}`,
       },
       body: JSON.stringify({
-        model: "gpt-3.5-turbo",
+        model: "gpt-4.1",
         messages: [{ role: "user", content: message }],
       }),
     });
