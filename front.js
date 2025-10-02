@@ -1,37 +1,28 @@
-// front.js
-const form = document.getElementById("chatForm");
-const messagesDiv = document.getElementById("messages");
+const form = document.getElementById("chat-form");
 const input = document.getElementById("userInput");
+const chat = document.getElementById("chat");
 
-// Change this to your deployed Vercel URL
-/*const API_URL = "https://alpacatheai.vercel.app/api/chat";*/
-
+function appendMessage(sender, text) {
+  const div = document.createElement("div");
+  div.textContent = `${sender}: ${text}`;
+  chat.appendChild(div);
+  chat.scrollTop = chat.scrollHeight;
+}
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
-  const userMsg = input.value.trim();
-  if (!userMsg) return;
+  const message = input.value.trim();
+  if (!message) return;
 
-  appendMessage("YOU", userMsg);
+  appendMessage("YOU", message);
   input.value = "";
 
-  try {
-    const res = await fetch(API_URL, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ message: userMsg }),
-    });
-    const data = await res.json();
-    appendMessage("ALPACA", data.reply || "No reply");
-  } catch (err) {
-    console.error("Fetch error:", err);
-    appendMessage("Error", "Unable to reach server");
-  }
-});
+  const res = await fetch("https://YOUR-RAILWAY-APP.up.railway.app/chat", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ message })
+  });
 
-  function appendMessage(sender, text) {
-  const msg = document.createElement("div");
-  msg.innerHTML = `<strong>${sender}:</strong> ${text}`;
-  messagesDiv.appendChild(msg);
-  messagesDiv.scrollTop = messagesDiv.scrollHeight;
-  }
+  const data = await res.json();
+  appendMessage("ALPACA", data.reply);
+});
