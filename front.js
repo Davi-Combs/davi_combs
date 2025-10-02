@@ -1,29 +1,37 @@
-const form = document.getElementById("chat-form");
+// front.js
+const form = document.getElementById("chatForm");
+const messagesDiv = document.getElementById("messages");
 const input = document.getElementById("userInput");
-const chat = document.getElementById("chat");
 
-function appendMessage(sender, text) {
-  const div = document.createElement("div");
-  div.textContent = `${sender}: ${text}`;
-  chat.appendChild(div);
-  chat.scrollTop = chat.scrollHeight;
-}
+// Change this to your deployed Vercel URL
+const API_URL = "https://davi-combs-six.vercel.app/api/chat";
+
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
-  const message = input.value.trim();
-  if (!message) return;
+  const userMsg = input.value.trim();
+  if (!userMsg) return;
 
-  appendMessage("YOU", message);
+  appendMessage("YOU", userMsg);
   input.value = "";
 
-  // Hard-coded Railway domain version
-  const res = await fetch("https://davicombs-production.up.railway.app/chat", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ message })
-  });
-
-  const data = await res.json();
-  appendMessage("ALPACA", data.reply);
+  try {
+    const res = await fetch(API_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ message: userMsg }),
+    });
+    const data = await res.json();
+    appendMessage("ALPACA", data.reply || "No reply");
+  } catch (err) {
+    console.error("Fetch error:", err);
+    appendMessage("Error", "Unable to reach server");
+  }
 });
+
+  function appendMessage(sender, text) {
+  const msg = document.createElement("div");
+  msg.innerHTML = `<strong>${sender}:</strong> ${text}`;
+  messagesDiv.appendChild(msg);
+  messagesDiv.scrollTop = messagesDiv.scrollHeight;
+  }
