@@ -73,16 +73,30 @@ body {
 .item1 {
   /* Span 2 columns */
   grid-column: 1 / span 2;
+  width: 50;
+  height: 175;
+
 }
 
 .item2 {
   /* Span 2 rows */
   grid-row: 2 / span 2;
+   width: 179;
+  height: 200;
+}
+
+.item3 {
+  /* Span 2 rows */
+  grid-row: 2 / span 4;
+  width: 150;
+  height: 200;
 }
 
 .item5 {
   /* Span 3 columns */
   grid-column: 1 / span 3;
+    width: 145;
+  height: 250;
 }
 
   /*.item1 { width: 150px; height: 200px; top: 20px; left: 30px; background: #8a9a5b; }
