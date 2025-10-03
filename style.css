@@ -35,7 +35,7 @@ background-color: #000000;
 
 .container {
   border: 1px solid var(--container-border);
-  background-color: #D811DF;
+  background-color: #ffffff;
   box-shadow: 0 4px 8px rgba(0,0,0,0.0);
   padding: 1px;
   overflow: hidden;
@@ -64,6 +64,7 @@ background-color: #000000;
 /* Container for the grid */
 .grid-container {
   display: grid;
+  background-color: #ffffff;
   gap: 1px; /* Space between grid items */
   grid-template-columns: repeat(1, 3fr); /* Example 3-column layout */
 }
