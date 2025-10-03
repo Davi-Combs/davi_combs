@@ -7,14 +7,14 @@ background-color: #000000;
   
 }
 
-.page-container {
+/*<!--.page-container {
   display: flex;
   flex-direction: column;
-  background-color: #D811DF; /* dark grey background like fatigues */
+  background-color: #D811DF; /* dark grey background like fatigues
   color: #1518F9;
-  padding: 1px;
+  padding: 1px;*/
   
-}
+/*}*/
 
 /*.grid-container {
   display: grid;
@@ -34,10 +34,10 @@ background-color: #000000;
 }
 
 .container {
-  border: 2px solid var(--container-border);
-  background: var(--container-bg);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  padding: 10px;
+  border: 1px solid var(--container-border);
+  background-color: #D811DF;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.0);
+  padding: 1px;
   overflow: hidden;
 }
 
