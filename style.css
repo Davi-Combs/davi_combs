@@ -38,8 +38,8 @@ background-color: #000000;
   background-color: #ffffff;
   box-shadow: 0 4px 8px rgba(0,0,0,0.0);
   padding: 1px;
-  overflow: hidden;
-}
+ /*overflow: hidden;*/
+/*}*/
 
 
 /*.container {
@@ -72,8 +72,8 @@ background-color: #000000;
 /* Common styles for all grid items */
 .item {
   padding: 1px;
-  background-color: #f2f2f2;
-  border: 1px #ffffff;
+  background-color: #ffffff;
+  border: 1px #FF00A3;
   text-align: center;
 }
 
