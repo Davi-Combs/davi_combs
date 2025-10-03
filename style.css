@@ -1,9 +1,9 @@
 body {
   margin: 0;
   padding: 0;
+  background: var(--page-bg);
   font-family: Arial, sans-serif;
-  background: #fdf5e6; /* cream background */
-  color: #ffffff;
+
   
 }
 
@@ -18,22 +18,32 @@ body {
   
 }
 
-.grid-container {
+/*.grid-container {
   display: grid;
     grid-template-columns: repeat(2, 1fr); /* Adjust the number of columns */
-    gap: 10px; /* Adjust the gap between items */
-  background-color: #ffffff; /* deep army green */
+    /*gap: 10px; /* Adjust the gap between items */
+ /* background-color: #ffffff; /* deep army green 
   border: 4px solid #f2f2f2;
   border-radius: 12px;
   padding: 2px;
   width: 800px;
   max-width: 800px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.6);
+  box-shadow: 0 0 20px rgba(0,0,0,0.6)*/
 
   /* allow resizing */
   resize: both;
   overflow: auto;
 }
+
+.container {
+  position: absolute;
+  border: 2px solid var(--container-border);
+  background: var(--container-bg);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  padding: 10px;
+  overflow: hidden;
+}
+
 
 /*.container {
   background-color: #556b2f; /* olive drab */
@@ -45,12 +55,12 @@ body {
   /*resize: both;
   overflow: auto;*/
 
-.container {
+/*.container {
   position: absolute;
   padding: 11px;
   border-radius: 12px;
   background: rgba(255, 255, 255);
-  box-shadow: 0px 3px 6px rgba(0,0,0,0.1);
+  box-shadow: 0px 3px 6px rgba(0,0,0,0.1);*/
 }
   /* Example chaotic placement */
 
@@ -118,7 +128,12 @@ h1, h2 {
     width: 700px;
   }
 
-.chatbox {
+ .chatbox {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+/*.chatbox {
   background-color: #ffffff;
   border: 2px solid #f2f2f2;
   border-radius: 6px;
@@ -126,9 +141,10 @@ h1, h2 {
   min-height: 300px;
   height: 400px;
   display: flex;
-  flex-direction: column; /* stack messages + form vertically */
+  flex-direction: column; 
+ stack messages + form vertically
   font-size: 16px;
-  color: #000000;
+  color: #000000;*/
 
   /* resizable */
   resize: both;
@@ -164,9 +180,21 @@ h1, h2 {
   font-style: italic;
 }
 
-#chatForm {
+
+#chat-form {
   display: flex;
-  margin-top: 10px;
+  gap: 5px;
+
+}
+
+
+#chat {
+  flex: 1;
+  border: 1px solid var(--chat-border);
+  margin-bottom: 10px;
+  padding: 5px;
+  overflow-y: auto; /* scrollbar when full */
+  background: var(--chat-bg);
 }
 
 #userInput {
@@ -178,22 +206,17 @@ h1, h2 {
   color: #f4f4f4;
 }
 
+
 #userInput::placeholder {
   color: #bbb;
 }
 
-button {
-  padding: 10px 20px;
-  margin-left: 10px;
-  background-color: #d4af37;
-  border: none;
-  border-radius: 6px;
-  color: #1a1a1a;
-  font-weight: bold;
+#sendBtn {
+  padding: 5px 10px;
   cursor: pointer;
-  transition: background 0.3s;
-}
+  background: var(--button-bg);
+  color: var(--button-text);
+  border: none;
 
 button:hover {
   background-color: #b8860b;
-}
