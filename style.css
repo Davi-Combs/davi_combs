@@ -31,6 +31,13 @@ background-color: #000000;
   /* allow resizing
   resize: both;
   overflow: auto;*/
+
+.grid-container {
+  display: grid;
+  background-color: #ffffff;
+  gap: 1px; /* Space between grid items */
+  grid-template-columns: repeat(1, 3fr); /* Example 3-column layout */
+  
 }
 
 .container {
@@ -62,12 +69,7 @@ background-color: #000000;
   /* Example chaotic placement */
 
 /* Container for the grid */
-.grid-container {
-  display: grid;
-  background-color: #ffffff;
-  gap: 1px; /* Space between grid items */
-  grid-template-columns: repeat(1, 3fr); /* Example 3-column layout */
-}
+
 
 /* Common styles for all grid items */
 .item {
