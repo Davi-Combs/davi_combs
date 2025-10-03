@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+<title>Davi's World</title>
 </head>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="bounce.css">
@@ -44,39 +44,21 @@
   alt="fing"></iframe></div>
     
 
-  <div class="page-container">
-     <div class="main-container">
-<!--/*Center item with Alpaca*/-->
-   <style="width: 400px; height: 500px; border: 1px solid #ccc;">
-   <div class="container">
-     <!-- One random container (this will be moved/resized by containers.js) -->
-<div class="container">
-  
-  /*Chat header*/
-  <div class="chat-container">
-    <img src="images/bandw.png" width="200" />
-    <h1>A.L.P.A.C.A.</h1>
-    <p class="subtext">Artificial Language Processing And Conversational Ass.</p>
+  <!-- Chat container (one of your movable boxes) -->
+  <div class="container" 
+       style="transform: translate(200px, 100px); width: 350px; height: 400px;">
+    <div class="chatbox">
+      <div id="chat"></div>
+      <form id="chat-form">
+        <input id="userInput" type="text" placeholder="Type here..." />
+        <button id="sendBtn" type="submit">Send</button>
+      </form>
+    </div>
   </div>
 
-  /*Where chat messages appear*/
-  <div id="chat" class="chat-box"></div>
+  <!-- Add more containers here if you want different content -->
 
-  /*Chat form: input + send button*/
-  <form id="chat-form" class="input-area">
-    <input 
-      id="userInput" 
-      type="text" 
-      placeholder="Ask ALPACA anything..." 
-      autocomplete="off" />
-    <button id="sendBtn" type="submit">Send</button>
-  </form>
-
-</div>
-
-    
-/*<!--Background color container-->*/
-
+  
 
   <div class="container">
     <iframe name="myIframe" src="https://websim.com/@Aunt13psychot1c/oregon-trail"
@@ -101,36 +83,7 @@ translate (-400, -250)
   alt="fing"></iframe></div>
   
   <script src="front.js"></script>
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const placed = [];
 
-    function overlaps(x, y, w, h) {
-      return placed.some(p =>
-        !(x + w < p.x || p.x + p.w < x || y + h < p.y || p.y + p.h < y)
-      );
-    }
-
-    document.querySelectorAll('.container').forEach(div => {
-      const width = Math.floor(Math.random() * 200) + 100;
-      const height = Math.floor(Math.random() * 200) + 100;
-
-      let tries = 0, x, y;
-      do {
-        x = Math.floor(Math.random() * (window.innerWidth - width));
-        y = Math.floor(Math.random() * (window.innerHeight - height));
-        tries++;
-      } while (overlaps(x, y, width, height) && tries < 50);
-
-      div.style.width = width + "px";
-      div.style.height = height + "px";
-      div.style.left = x + "px";
-      div.style.top = y + "px";
-
-      placed.push({ x, y, w: width, h: height });
-    });
-  });
-</script>
   
 </body>
 </html>
