@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-background-color: #101A0E;
+background-color: #000000;
   font-family: Arial, sans-serif;
 
   
@@ -10,8 +10,8 @@ background-color: #101A0E;
 .page-container {
   display: flex;
   flex-direction: column;
-  background-color: #ffffff; /* dark grey background like fatigues */
-  color: #f2f2f2;
+  background-color: #D811DF; /* dark grey background like fatigues */
+  color: #1518F9;
   padding: 1px;
   
 }
