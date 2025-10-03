@@ -1,4 +1,4 @@
- document.addEventListener("DOMContentLoaded", () => {
+/* document.addEventListener("DOMContentLoaded", () => {
     const placed = [];
 
     function overlaps(x, y, w, h) {
@@ -25,4 +25,4 @@
 
       placed.push({ x, y, w: width, h: height });
     });
-  });
+  });  */
