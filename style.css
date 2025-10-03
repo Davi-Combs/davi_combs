@@ -10,8 +10,6 @@ body {
 .page-container {
   display: flex;
   flex-direction: column;
-  width: 1000px;
-  height: 1500px;  align-items: center;
   background-color: #ffffff; /* dark grey background like fatigues */
   color: #f2f2f2;
   padding: 1px;
@@ -30,13 +28,12 @@ body {
   max-width: 800px;
   box-shadow: 0 0 20px rgba(0,0,0,0.6)*/
 
-  /* allow resizing */
+  /* allow resizing
   resize: both;
-  overflow: auto;
+  overflow: auto;*/
 }
 
 .container {
-  position: absolute;
   border: 2px solid var(--container-border);
   background: var(--container-bg);
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
@@ -131,7 +128,7 @@ h1, h2 {
  .chatbox {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  
 
 /*.chatbox {
   background-color: #ffffff;
@@ -147,7 +144,7 @@ h1, h2 {
   color: #000000;*/
 
   /* resizable */
-  resize: both;
+  /*resize: both;
   overflow: hidden; /* stop double scrollbars */
 }
 
